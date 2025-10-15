@@ -54,9 +54,10 @@ body {
 
 .search-form {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, auto) minmax(150px, auto);
   gap: 0.75rem;
   margin-bottom: 1.5rem;
+  align-items: center;
 }
 
 .search-form input {
@@ -84,6 +85,7 @@ body {
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: #0f172a;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
 }
 
 .search-form button:hover {
@@ -190,10 +192,27 @@ body {
 
   .search-form {
     grid-template-columns: 1fr;
+    align-items: stretch;
   }
 
   .search-form button,
   .search-form input {
     width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    padding: 3rem 2rem;
+  }
+
+  .card {
+    width: min(100%, 540px);
+    padding: 3rem 2.5rem;
+  }
+
+  .search-form {
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr) minmax(170px, auto) minmax(170px, auto);
   }
 }
