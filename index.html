@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全球天气实时查询</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>全球天气实时查询</h1>
+    <p>输入城市名称，查看实时天气情况</p>
+  </header>
+
+  <main class="card">
+    <form id="weather-form" class="search-form" autocomplete="off">
+      <label for="city" class="visually-hidden">城市名称</label>
+      <input type="text" id="city" name="city" placeholder="例如：Beijing、New York" required />
+      <button type="submit">查询天气</button>
+      <button type="button" id="reset-btn" class="secondary">清除结果</button>
+    </form>
+
+    <section id="status" class="status" aria-live="polite"></section>
+
+    <section id="result" class="result" hidden>
+      <h2 id="result-city"></h2>
+      <p class="temperature"><span id="temperature"></span><span class="unit">°C</span></p>
+      <ul class="details">
+        <li><span>天气：</span><span id="weather-description"></span></li>
+        <li><span>体感温度：</span><span id="apparent-temperature"></span>°C</li>
+        <li><span>风速：</span><span id="wind-speed"></span> m/s</li>
+        <li><span>风向：</span><span id="wind-direction"></span>°</li>
+        <li><span>湿度：</span><span id="humidity"></span>%</li>
+      </ul>
+      <p class="updated">更新时间：<time id="observation-time"></time></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>数据来源：<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
