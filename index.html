@@ -19,8 +19,10 @@
     <form id="weather-form" class="search-form" autocomplete="off">
       <label for="city" class="visually-hidden">城市名称</label>
       <input type="text" id="city" name="city" placeholder="例如：Beijing、New York" required />
-      <button type="submit">查询天气</button>
-      <button type="button" id="reset-btn" class="secondary">清除结果</button>
+      <div class="form-actions">
+        <button type="submit">查询天气</button>
+        <button type="button" id="reset-btn" class="secondary">清除结果</button>
+      </div>
     </form>
 
     <section id="status" class="status" aria-live="polite"></section>
